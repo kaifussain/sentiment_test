@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form method="POST">
+        <label for="text">Enter your sentence:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea><br><br>
+        <p>*Neutral if score <  <input type="number" value={{neutralLimit}} id="neutralLimit" name="neutralLimit" step="0.01" min="0" max="1"></p>
+        <input type="submit" value="Analyze">
+    </form>
+    <br>
+    {% if sentiment %}
+        <div>
+            Text: {{sentence}}
+        </div>
+        <h3>Overall Sentiment: {{ sentiment }}</span></h2>
+        <h4>Sentiment: {{sentiment_real}} | Score: {{score}}</h4>
+    {% endif %}
+</body>
+</html>
